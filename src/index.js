@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/index.css';
-import App from './pages/App';
+import EditMeme from './pages/EditMeme';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <EditMeme />
   </React.StrictMode>,
   document.getElementById('root')
 );
