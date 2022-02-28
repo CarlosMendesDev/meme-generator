@@ -1,0 +1,141 @@
+.EditMeme {
+  text-align: -webkit-center;
+  width: 100vw;
+  height: 100vh;
+}
+
+header {
+  background-color: #F2E205;
+  padding-left: 2rem;
+  display: flex;
+  align-items: center;
+  height: 81px;
+}
+
+.logo-header {
+  margin: none!important;
+  width: 80px;
+  height: 66px;
+}
+
+.title-header {
+  margin-left: 2rem;
+  color: #393939;
+  font-weight: bold;
+  font-size: 48px;
+}
+
+.container-meme {
+  max-width: 450px;
+  display: grid;
+}
+
+#meme {
+  width: 450px;
+  height: 316px;
+  background-size: cover;
+}
+
+.container-meme label {
+  font-family: 'Anton';
+  font-size: 45px;
+  color: aliceblue;
+}
+
+.button {
+  max-width: 450px;
+  min-height: 62px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 34px;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #313133;
+  background: #F2E205;
+  background: linear-gradient(90deg, rgba(242,226,5,1) 0%, rgba(242,226,5,1) 100%);
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px rgba(242,226,5,.64);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+button::before {
+  content: '';
+  border-radius: 1000px;
+  min-width: calc(450px + 12px);
+  min-height: calc(62px + 12px);
+  border: 6px solid #F2E205;
+  box-shadow: 0 0 60px rgba(242,226,5,.64);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all .3s ease-in-out 0s;
+}
+
+.button:hover, .button:focus {
+  color: #313133;
+  transform: translateY(-6px);
+}
+
+button:hover::before, button:focus::before {
+  opacity: 1;
+}
+
+button::after {
+  content: '';
+  width: 0px; height: 30px;
+  border-radius: 180px;
+  border: 6px solid #F2E205;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+}
+
+button:hover::after, button:focus::after {
+  animation: none;
+  display: none;
+}
+
+@keyframes ring {
+  0% {
+    width: 300px;
+    height: 81px;
+    opacity: 1;
+  }
+  100% {
+    width: 480px;
+    height: 120px;
+    opacity: 0;
+  }
+}
+
+footer {
+  display: grid;
+  position: fixed;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+}
+
+a {
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #393939;
+}
