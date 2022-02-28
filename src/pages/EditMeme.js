@@ -24,6 +24,7 @@ class EditMeme extends Component {
           <input
             placeholder="Top text..."
             type="text"
+            onChange={(event) => { MemeGenerate.setTopText(event.target.value) }}
           ></input>
   
           <img
@@ -34,13 +35,19 @@ class EditMeme extends Component {
           <input
             placeholder="Bottom text..."
             type="text"
+            onChange={(event) => { MemeGenerate.setBottomText(event.target.value) }}
           ></input>
   
-          <button className="button">
+          <button
+            className="button"
+            onClick={this.generateMeme}
+          >
             Generate
           </button>
         </div>
-  
+
+        <Link to="/meme" id="meme-page"/>
+
         <footer>
           <label>Desenvolvido por Os Brabos</label>
           <a href="https://github.com/CarlosMendesDev" target="blank">
@@ -50,6 +57,11 @@ class EditMeme extends Component {
         </footer>
       </div>
     );
+  }
+
+  generateMeme() {
+    const btnPageMeme = document.getElementById('meme-page');
+    btnPageMeme.click();
   }
 }
 
